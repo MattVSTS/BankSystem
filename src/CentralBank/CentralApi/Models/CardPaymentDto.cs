@@ -39,6 +39,10 @@
         public string DestinationBankSwiftCode { get; set; }
 
         [Required]
+        [MaxLength(ModelConstants.BankAccount.SortCodeMaxLength)]
+        public string DestinationBankSortCode { get; set; }
+
+        [Required]
         [MaxLength(ModelConstants.BankAccount.CountryMaxLength)]
         public string DestinationBankCountry { get; set; }
 

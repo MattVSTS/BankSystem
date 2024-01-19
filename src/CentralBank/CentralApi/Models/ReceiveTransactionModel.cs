@@ -28,6 +28,10 @@
         public string DestinationBankSwiftCode { get; set; }
 
         [Required]
+        [MaxLength(ModelConstants.BankAccount.SortCodeMaxLength)]
+        public string DestinationBankSortCode { get; set; }
+
+        [Required]
         [MaxLength(ModelConstants.BankAccount.NameMaxLength)]
         public string DestinationBankName { get; set; }
 

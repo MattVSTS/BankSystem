@@ -6,7 +6,7 @@
 
     public interface IBanksService
     {
-        Task<T> GetBankAsync<T>(string bankName, string swiftCode, string bankCountry)
+        Task<T> GetBankAsync<T>(string bankName, string swiftCode, string sortCode, string bankCountry)
             where T : BankBaseServiceModel;
 
         Task<IEnumerable<T>> GetAllBanksSupportingPaymentsAsync<T>()

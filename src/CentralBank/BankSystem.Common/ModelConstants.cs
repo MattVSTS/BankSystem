@@ -20,6 +20,7 @@
             public const int NameMaxLength = 35;
             public const int UniqueIdMaxLength = 34;
             public const int SwiftCodeMaxLength = 11;
+            public const int SortCodeMaxLength = 8;
             public const int CountryMaxLength = 35;
         }
 

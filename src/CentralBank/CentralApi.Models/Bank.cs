@@ -13,6 +13,9 @@
 
         [Required]
         public string SwiftCode { get; set; }
+        
+        [Required]
+        public string SortCode { get; set; }
 
         [Required]
         public string Location { get; set; }

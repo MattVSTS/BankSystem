@@ -11,6 +11,8 @@ namespace CentralApi.Models
 
         public string SwiftCode { get; set; }
 
+        public string SortCode { get; set; }
+
         public string Id { get; set; }
     }
 }

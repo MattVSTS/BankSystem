@@ -13,6 +13,7 @@ namespace CentralApi.Data.Migrations
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     SwiftCode = table.Column<string>(nullable: false),
+                    SortCode = table.Column<string>(nullable: false),
                     Location = table.Column<string>(nullable: false),
                     ApiKey = table.Column<string>(nullable: false),
                     ApiAddress = table.Column<string>(nullable: false),

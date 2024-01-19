@@ -57,9 +57,10 @@
                 dynamic deserializedData = JsonConvert.DeserializeObject(incomingData);
                 string bankName = deserializedData.BankName;
                 string bankSwiftCode = deserializedData.BankSwiftCode;
+                string bankSortCode = deserializedData.BankSortCode;
                 string bankCountry = deserializedData.BankCountry;
 
-                var bank = await bankService.GetBankAsync<BankServiceModel>(bankName, bankSwiftCode, bankCountry);
+                var bank = await bankService.GetBankAsync<BankServiceModel>(bankName, bankSwiftCode, bankSortCode, bankCountry);
                 if (bank == null)
                 {
                     return false;
