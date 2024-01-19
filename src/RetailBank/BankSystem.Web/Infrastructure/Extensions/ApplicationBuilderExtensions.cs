@@ -47,7 +47,7 @@
                 var user = new BankUser
                 {
                     Email = "test@test.com",
-                    FullName = "Test Testov",
+                    FullName = "John Doe",
                     UserName = "test@test.com",
                     EmailConfirmed = true,
                     BankAccounts = new List<BankAccount>
@@ -56,8 +56,8 @@
                         {
                             Balance = 10000,
                             CreatedOn = DateTime.UtcNow,
-                            Name = "Main account",
-                            UniqueId = "ABCJ98131785"
+                            Name = "Current account",
+                            UniqueId = "UKAJ98131785"
                         }
                     }
                 };

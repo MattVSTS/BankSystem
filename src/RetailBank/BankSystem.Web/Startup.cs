@@ -48,7 +48,7 @@
             services.AddIdentity<BankUser, IdentityRole>(options =>
                 {
                     options.Password.RequireNonAlphanumeric = false;
-                    options.SignIn.RequireConfirmedEmail = true;
+                    //options.SignIn.RequireConfirmedEmail = true;
 
                     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
                     options.Lockout.MaxFailedAccessAttempts = 5;
