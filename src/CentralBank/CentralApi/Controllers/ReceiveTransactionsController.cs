@@ -43,7 +43,7 @@
         {
             var model = JsonConvert.DeserializeObject<ReceiveTransactionModel>(data);
             var bank = await this.banksService.GetBankAsync<BankServiceModel>(model.DestinationBankName,
-                model.DestinationBankSwiftCode,
+                model.DestinationBankSwiftCode, model.DestinationBankSortCode, 
                 model.DestinationBankCountry);
 
             if (bank == null)

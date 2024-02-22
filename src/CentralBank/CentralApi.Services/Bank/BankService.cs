@@ -19,7 +19,7 @@
             : base(context)
             => this.mapper = mapper;
 
-        public async Task<T> GetBankAsync<T>(string bankName, string swiftCode, string bankCountry)
+        public async Task<T> GetBankAsync<T>(string bankName, string swiftCode, string sortCode, string bankCountry)
             where T : BankBaseServiceModel
         {
             const string likeExpression = "%{0}%";
@@ -28,6 +28,7 @@
                 .Where(b =>
                     EF.Functions.Like(b.Name, string.Format(likeExpression, bankName)) &&
                     EF.Functions.Like(b.SwiftCode, string.Format(likeExpression, swiftCode)) &&
+                    EF.Functions.Like(b.SortCode, string.Format(likeExpression, sortCode)) &&
                     EF.Functions.Like(b.Location, string.Format(likeExpression, bankCountry)))
                 .ProjectTo<T>(this.mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();

@@ -19,9 +19,11 @@
             this.banksService = new BanksService(this.dbContext, this.Mapper);
         }
 
-        private const string SampleBankName = "Bank system";
-        private const string SampleBankCountry = "Bulgaria";
-        private const string SampleBankSwiftCode = "ABC";
+        private const string SampleBankName = "Retail Bank 1";
+        private const string SampleBankCountry = "United Kingdom";
+        private const string SampleBankSwiftCode = "UKA";
+        private const string SampleBankSortCode = "11-11-11";
+
         private const string SamplePaymentUrl = "https://localhost:56013/pay";
         private const string SampleIdentificationNumbers = "10";
 
@@ -78,6 +80,7 @@
                     Name = $"{SampleBankName}_{i}",
                     Location = $"{SampleBankCountry}_{i}",
                     SwiftCode = $"{SampleBankSwiftCode}_{i}",
+                    SortCode = $"{SampleBankSortCode}_{i}",
                     PaymentUrl = SamplePaymentUrl,
                     BankIdentificationCardNumbers = $"{SampleIdentificationNumbers}{i}"
                 };
@@ -149,7 +152,7 @@
 
             // Act
             var result = await this.banksService
-                .GetBankAsync<BankServiceModel>(SampleBankName, null, SampleBankSwiftCode);
+                .GetBankAsync<BankServiceModel>(SampleBankName, null, SampleBankSwiftCode, SampleBankSortCode);
 
             // Assert
             result
@@ -165,7 +168,7 @@
 
             // Act
             var result = await this.banksService
-                .GetBankAsync<BankServiceModel>(null, SampleBankCountry, SampleBankSwiftCode);
+                .GetBankAsync<BankServiceModel>(null, SampleBankCountry, SampleBankSwiftCode, SampleBankSortCode);
 
             // Assert
             result
@@ -181,7 +184,23 @@
 
             // Act
             var result = await this.banksService
-                .GetBankAsync<BankServiceModel>(SampleBankName, SampleBankCountry, null);
+                .GetBankAsync<BankServiceModel>(SampleBankName, SampleBankCountry, null, SampleBankSortCode);
+
+            // Assert
+            result
+                .Should()
+                .BeNull();
+        }
+
+        [Fact]
+        public async Task GetBankAsync_WithInvalidBankSortCode_ShouldReturnNull()
+        {
+            // Arrange
+            await this.SeedBanks(3);
+
+            // Act
+            var result = await this.banksService
+                .GetBankAsync<BankServiceModel>(SampleBankName, SampleBankCountry, SampleBankSwiftCode, null);
 
             // Assert
             result
@@ -198,7 +217,7 @@
 
             // Act
             var result = await this.banksService
-                .GetBankAsync<BankListingServiceModel>(expectedBank.Name, expectedBank.SwiftCode,
+                .GetBankAsync<BankListingServiceModel>(expectedBank.Name, expectedBank.SwiftCode, expectedBank.SortCode,
                     expectedBank.Location);
 
             // Assert
@@ -257,5 +276,7 @@
                 .Should()
                 .BeAssignableTo<BankListingServiceModel>();
         }
+
+        
     }
 }
