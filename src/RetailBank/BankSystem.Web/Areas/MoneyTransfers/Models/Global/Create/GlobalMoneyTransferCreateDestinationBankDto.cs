@@ -5,10 +5,13 @@
 
     public class GlobalMoneyTransferCreateDestinationBankDto
     {
-        [Required]
         [MaxLength(ModelConstants.BankAccount.SwiftCodeMaxLength)]
-        [Display(Name = "Swift/Bank code")]
+        [Display(Name = "Swift code")]
         public string SwiftCode { get; set; }
+        
+        [MaxLength(ModelConstants.BankAccount.SortCodeMaxLength)]
+        [Display(Name = "Sort code")]
+        public string SortCode { get; set; }
 
         [Required]
         [MaxLength(ModelConstants.BankAccount.NameMaxLength)]

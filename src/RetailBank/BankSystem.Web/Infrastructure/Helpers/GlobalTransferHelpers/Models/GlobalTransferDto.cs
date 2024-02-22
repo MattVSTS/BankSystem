@@ -19,9 +19,11 @@ namespace BankSystem.Web.Infrastructure.Helpers.GlobalTransferHelpers.Models
         [MaxLength(ModelConstants.MoneyTransfer.DescriptionMaxLength)]
         public string Description { get; set; }
 
-        [Required]
         [MaxLength(ModelConstants.BankAccount.SwiftCodeMaxLength)]
-        public string DestinationBankSwiftCode { get; set; }
+        public string DestinationBankSwiftCode { get; set; }        
+        
+        [MaxLength(ModelConstants.BankAccount.SortCodeMaxLength)]
+        public string DestinationBankSortCode { get; set; }
 
         [Required]
         [MaxLength(ModelConstants.BankAccount.NameMaxLength)]

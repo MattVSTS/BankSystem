@@ -8,10 +8,12 @@
 
     public class GlobalMoneyTransferCentralApiBindingModel : IMapWith<GlobalMoneyTransferCreateBindingModel>,
         IMapWith<MoneyTransferCreateServiceModel>
-    {
-        [Required]
+    {        
         [MaxLength(ModelConstants.BankAccount.SwiftCodeMaxLength)]
         public string DestinationBankSwiftCode { get; set; }
+
+        [MaxLength(ModelConstants.BankAccount.SortCodeMaxLength)]
+        public string DestinationBankSortCode { get; set; }
 
         [Required]
         [MaxLength(ModelConstants.BankAccount.NameMaxLength)]

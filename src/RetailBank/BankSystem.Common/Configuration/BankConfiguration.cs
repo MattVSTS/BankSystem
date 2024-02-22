@@ -4,9 +4,11 @@ namespace BankSystem.Common.Configuration
 
     public class BankConfiguration
     {
-        [Required]
         [RegularExpression(@"^[A-Z]{3}$")]
         public string UniqueIdentifier { get; set; }
+
+        [RegularExpression(@"^[A-Z]{3}$")]
+        public string SortCode { get; set; }
 
         [Required]
         public string Key { get; set; }

@@ -134,6 +134,7 @@ namespace BankSystem.Web.Infrastructure.Helpers.GlobalTransferHelpers
             {
                 BankName = this.bankConfiguration.BankName,
                 BankSwiftCode = this.bankConfiguration.UniqueIdentifier,
+                BankSortCode = this.bankConfiguration.SortCode,
                 BankCountry = this.bankConfiguration.Country,
                 EncryptedKey = encryptedKey,
                 EncryptedIv = encryptedIv,

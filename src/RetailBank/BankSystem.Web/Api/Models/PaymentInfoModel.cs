@@ -25,7 +25,8 @@
 
         [Required] public string DestinationBankName { get; set; }
 
-        [Required] public string DestinationBankSwiftCode { get; set; }
+        public string DestinationBankSwiftCode { get; set; }
+        public string DestinationBankSortCode { get; set; }
 
         [Required] public string DestinationBankCountry { get; set; }
 

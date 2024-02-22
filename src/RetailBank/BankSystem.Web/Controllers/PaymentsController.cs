@@ -154,7 +154,8 @@ namespace BankSystem.Web.Controllers
                     Description = paymentInfo.Description,
                     DestinationBankName = paymentInfo.DestinationBankName,
                     DestinationBankCountry = paymentInfo.DestinationBankCountry,
-                    DestinationBankSwiftCode = paymentInfo.DestinationBankSwiftCode,
+                    DestinationBankSwiftCode = paymentInfo.DestinationBankCode,
+                    DestinationBankSortCode = paymentInfo.DestinationBankSortCode,
                     DestinationBankAccountUniqueId = paymentInfo.DestinationBankAccountUniqueId,
                     RecipientName = paymentInfo.RecipientName,
                     SourceAccountId = model.AccountId

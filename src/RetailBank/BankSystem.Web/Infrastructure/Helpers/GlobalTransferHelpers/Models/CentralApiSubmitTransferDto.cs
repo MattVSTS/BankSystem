@@ -15,6 +15,8 @@
         public string SenderAccountUniqueId { get; set; }
 
         public string DestinationBankSwiftCode { get; set; }
+        
+        public string DestinationBankSortCode { get; set; }
 
         public string DestinationBankName { get; set; }
 
